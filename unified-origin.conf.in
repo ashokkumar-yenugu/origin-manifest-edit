@@ -83,7 +83,7 @@ LogFormat {{LOG_FORMAT}} log_format
   ExtFilterDefine ef_utc_change                            mode=output cmd="${ManifestEditCmdPre}${PipelineConfUTCChange}${ManifestEditCmdPost}"
   ExtFilterDefine ef_utc_remove                            mode=output cmd="${ManifestEditCmdPre}${PipelineConfUTCRemove}${ManifestEditCmdPost}"
 
-  <LocationMatch ".*\.[is]sm[l]?/\.mpd*$">
+  <LocationMatch ".*\.[is]sm[l]?/\.mpd.*$">
     <If "%{QUERY_STRING} =~ /pipeline=adaptation_sets_order/">
         SetOutputFilter ef_adaptation_sets_order
         ExtFilterOptions LogStdErr Onfail=abort
